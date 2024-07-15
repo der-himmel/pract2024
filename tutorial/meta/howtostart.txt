@@ -1,0 +1,2 @@
+Создать файл users.db
+python -m uvicorn main:app --reload
