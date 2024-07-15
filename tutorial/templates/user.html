@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .fields {
+            font-family: Arial, sans-serif;
+            align-items: center;
+        }
+
+        .bold{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Профиль пользователя</h2>
+        <form method="get">
+            <div class="fields">
+                <label class="bold">ФИО: </label>
+                <label>{{ snp }}</label>
+                <p></p>
+                <label class="bold">Дата рождения:</label>
+                <label>{{ bdate }}</label>
+                <p></p>
+                <label class="bold">Почта:</label>
+                <label>{{ email }}</label>
+                <p></p>
+                <a href="{{id}}/files"><h3>Документы</h3></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
