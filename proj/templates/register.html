@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            padding: 5px;
+            width: 200px;
+        }
+
+        .button {
+            max-width: 12em;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            -webkit-transition: 0.3s;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align = top;
+            white-space:nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .button:hover{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 20em;
+        }
+
+        .login {
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+<!--            display: flex;-->
+            justify-content: center;
+<!--            align-items: flex-end;-->
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Регистрация</h2>
+        <form method="post" action="/register" enctype="multipart/form-data">
+            <div class="input-group">
+                <label>Фамилия: </label>
+                <input type="text" name="fsurname" placeholder="Введите свою фамилию" required>
+                <p></p>
+                <label>Имя: </label>
+                <input type="text" name="fname" placeholder="Введите свое имя" required>
+                <p></p>
+                <label>Отчество: </label>
+                <input type="text" name="fpatronym" placeholder="Введите свое отчество" required>
+                <p></p>
+                <label>Дата рождения:</label>
+                <input type="date" name="fbdate" value="{{ bdate }}" style="font-size: 15px">
+                <p></p>
+                <label>Почта:</label>
+                <input type="email" name="femail" placeholder="Введите электронную почту" required>
+                <p></p>
+                <label>Пароль:</label>
+                <input type="password" name="fpasswd" placeholder="Придумайте пароль" required>
+                <p></p>
+                <label>Прикрепить документы:</label>
+                <input type="file" id="attached_docs" name="fdocs" accept="application/pdf" required>
+                <p></p>
+                <label>Прикрепить фото профиля:</label>
+                <input type="file" id="profile_photo" name="fpfp" accept="image">
+            </div>
+            <button class="button" type="submit">Зарегистрироваться</button>
+            <div class="login">
+                <label>Уже зарегистрированы?</label>
+                <a href="/auth"><button class="button" type="button">Войти</button></a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
