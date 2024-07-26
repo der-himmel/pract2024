@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .fields {
+            font-family: Arial, sans-serif;
+            align-items: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .button {
+            max-width: 9em;
+            -webkit-transition: 0.2s;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align: top;
+            white-space: nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 150px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Профиль пользователя</h2>
+        <form method="post">
+            <div class="fields">
+                <img class="profile-image" src="/avatars/{{ pfp_path }}">
+                <p></p>
+                <label class="bold">ФИО: </label>
+                <label>{{ snp }}</label>
+                <p></p>
+                <label class="bold">Дата рождения:</label>
+                <label>{{ bdate }}</label>
+                <p></p>
+                <label class="bold">Почта:</label>
+                <label>{{ email }}</label>
+                <p></p>
+                <a href="{{id}}/files"><button class="button" type="button">Документы</button></a>
+            </div>
+            <a href="/users/me/edit"><button class="button" type="button">Редактировать</button></a>
+            <button class="button" type="submit">Выйти</button>
+        </form>
+    </div>
+</body>
+</html>
