@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Сообщение</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            align-items: center
+        }
+        .image {
+            margin-top: 10px;
+        }
+
+        .button {
+            max-width: 12em;
+           -webkit-transition: 0.2s;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align = top;
+            white-space:nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .button:hover{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 16em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Поздравляю!</h2>
+        <label> {{ detail }} </label>
+        <p></p>
+        <form method="post">
+            <button class="button" type="submit">Выйти</button>
+            <a href="/users/1"><button class="button" type="button">Перейти к профилям</button></a>
+        </form>
+        <div class="image">
+            <img src="https://img.freepik.com/premium-photo/kitten-sits-basket-flowers_899870-5422.jpg">
+        </div>
+    </div>
+</body>
+</html>
