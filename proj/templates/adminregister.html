@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            padding: 5px;
+            width: 200px;
+        }
+
+        .button {
+            max-width: 11em;
+            background-color: blue;
+            border: 2px solid blue;
+            color: white;
+            padding: 10px 5px;
+            -webkit-transition: 0.3s;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align = top;
+            white-space:nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .button:hover{
+            padding: 10px 20px;
+            background-color: white;
+            color: blue;
+            max-width: 13em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Регистрация администратора</h2>
+        <form method="post" action="/adminregister" enctype="multipart/form-data">
+            <div class="input-group">
+                <label>Почта:</label>
+                <input type="email" name="admfemail" placeholder="Введите электронную почту" required>
+                <p></p>
+                <label>Пароль:</label>
+                <input type="password" name="admfpasswd" placeholder="Придумайте пароль" required>
+            </div>
+            <button class="button" type="submit">Зарегистрироваться</button>
+        </form>
+    </div>
+</body>
+</html>
