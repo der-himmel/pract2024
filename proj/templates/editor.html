@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Редактура</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 10px;
+        }
+
+        .input-group input {
+            padding: 5px;
+            width: 200px;
+        }
+
+        .button {
+            max-width: 12em;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            -webkit-transition: 0.3s;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align = top;
+            white-space:nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+        .button:hover{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 20em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Внести изменения</h2>
+        <form method="post" action="/users/me/edit" enctype="multipart/form-data">
+            <div class="input-group">
+                <label>Фамилия: </label>
+                <input type="text" name="fsurname" value="{{ surname }}" placeholder="Введите свою фамилию" required>
+                <p></p>
+                <label>Имя: </label>
+                <input type="text" name="fname" value="{{ name }}" placeholder="Введите свое имя" required>
+                <p></p>
+                <label>Отчество: </label>
+                <input type="text" name="fpatronym" placeholder="Введите свое отчество" value="{{ patronym }}" required>
+                <p></p>
+                <label>Дата рождения:</label>
+                <input type="date" name="fbdate" value="{{ bdate }}" style="font-size: 15px">
+                <input type="hidden" name="femail" value="{{ email }}">
+                <p></p>
+                <label>Подтвердите пароль:</label>
+                <input type="password" name="fpasswd" placeholder="Введите пароль" required>
+                <p></p>
+            </div>
+            <a href="/users/me/edit"><button class="button" type="submit">Сохранить изменения</button></a>
+            <a href="/users/me"><button class="button" type="button">Отмена</button></a>
+        </form>
+    </div>
+</body>
+</html>
