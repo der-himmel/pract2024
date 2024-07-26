@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Профиль</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        .fields {
+            font-family: Arial, sans-serif;
+            align-items: center;
+        }
+
+        .exit {
+            position: fixed;
+            bottom: 50px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .button {
+            max-width: 9em;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align = top;
+            white-space:nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+            -webkit-transition: 0.2s;
+        }
+
+        .button:hover{
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 150px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .prev {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-right: 60px solid;
+            background: white;
+            border-left: none;
+            cursor: pointer;
+            outline: none;
+            margin-top: 10px;
+            border-right-color: blue;
+            -webkit-transition: 0.2s;
+            &:hover {
+                border-right: 80px solid darkblue;
+            }
+        }
+
+        .next {
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            background: white;
+            border-left: none;
+            cursor: pointer;
+            outline: none;
+            border-left: 60px solid;
+            border-right: none;
+            border-left-color: blue;
+            -webkit-transition: 0.2s;
+            &:hover {
+                border-left: 80px solid darkblue;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Профиль пользователя</h2>
+        <form method="post">
+            <div class="fields">
+                <img class="profile-image" src="/avatars/{{ pfp_path }}">
+                <p></p>
+                <label class="bold">ФИО: </label>
+                <label>{{ snp }}</label>
+                <p></p>
+                <label class="bold">Дата рождения:</label>
+                <label>{{ bdate }}</label>
+                <p></p>
+                <label class="bold">Почта:</label>
+                <label>{{ email }}</label>
+                <p></p>
+                <a href="{{id}}/files"><button class="button" type="button">Документы</button></a>
+            </div>
+            <div class="navigate">
+                <a href="{{id - 1}}"><button class="prev" type="button"></button></a>
+                <a href="{{id + 1}}"><button class="next" type="button"></button></a>
+            </div>
+            <div class="exit">
+                <button class="button" type="submit">Выйти</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
