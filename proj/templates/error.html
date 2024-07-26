@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ошибка</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+
+        .button {
+            max-width: 9em;
+            -webkit-transition: 0.2s;
+            background-color: white;
+            border: 2px solid blue;
+            color: blue;
+            padding: 10px 5px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            vertical-align: top;
+            white-space: nowrap;
+            font-size: 16px;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .button:hover {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            max-width: 150px;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+            align-items: center
+        }
+        .image {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Ошибка! {{ error_code }} </h2>
+        <label> {{ error_detail }} </label>
+        <p></p>
+        <a href="{{ prev_endpoint }}"><button class="button" type="button">Назад</button></a>
+        <div class="image">
+            <img src="https://img.freepik.com/premium-photo/kitten-sits-basket-flowers_899870-5422.jpg">
+        </div>
+    </div>
+</body>
+</html>
